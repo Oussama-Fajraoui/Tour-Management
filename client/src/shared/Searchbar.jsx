@@ -1,8 +1,22 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './search-bar.css';
 import { Col, Form, FormGroup } from 'reactstrap';
 
 const Searchbar = () => {
+  const locationRef = useRef("")
+  const distanceRef = useRef(0)
+  const maxGroupSizeRef = useRef(0)
+
+
+  const searchhandler = () => {
+    const location = locationRef.current.value
+    const distance = distanceRef.current.value
+    const maxGroupSize = maxGroupSizeRef.current
+  }
+
+
+
+
   return <Col lg="12">
     <div className="search__bar">
         <Form className='d-flex align-items-center gap-4'>
@@ -33,6 +47,9 @@ const Searchbar = () => {
                   <input type="number" placeholder='0' />
                 </div>
             </FormGroup>
+            <span className="search__icon" type="submit">
+            <i class="ri-search-line"></i>
+            </span>
         </Form>
     </div>
   </Col>
