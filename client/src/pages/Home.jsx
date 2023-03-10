@@ -60,6 +60,11 @@ const Home = () => {
         </Row>
       </Container>
     </section>
+
+    {/* =========== featured tour section start here ============= */}
+
+    {/* =========== featured tour section end here ============= */}
+
   </>
 }
 
