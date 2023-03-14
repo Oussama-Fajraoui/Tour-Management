@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card,CardBody } from 'reactstrap';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import "./tour-card.css"
 
 const TourCard = ({tour}) => {
 
@@ -11,9 +12,7 @@ const TourCard = ({tour}) => {
         <img src={photo} alt="tour-img" />
         <span>Featured</span>
       </div>
-    </Card>
-
-    <CardBody>
+      <CardBody>
       <div className="card__top d-flex align-items-center justify-content-between">
         <span className="tour__location d-flex align-items-center gap-1">
         <i class="ri-map-pin-line"></i> {city}
@@ -36,6 +35,9 @@ const TourCard = ({tour}) => {
         </button>
       </div>
     </CardBody>
+    </Card>
+
+    
   </div>
 }
 
