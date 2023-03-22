@@ -78,7 +78,7 @@
     background: var(--secondary-color) !important;
     cursor: pointer;
     padding: 0.2rem 0.5rem;
-}
+}  
 
 .booking__btn a {
     text-decoration: none;
