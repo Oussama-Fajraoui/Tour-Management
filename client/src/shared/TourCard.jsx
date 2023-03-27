@@ -5,12 +5,17 @@ import "./tour-card.css"
 
 const TourCard = ({tour}) => {
 
-  const{ id, title, city, photo, price, featured, avgRating, reviews }=tour
+  const{ id, title, city, photo, price, featured, reviews }=tour
+  const totalRating = reviews?.reduce((acc, item) => acc + item.rating, 0)
+  const avgRating = 
+  totalRating === 0 ? 
+  ""  :totalRating === 1 ? 
+  totalRating : totalRating / reviews?.length;
   return <div className="tour__card">
     <Card>
       <div className="tour__img">
         <img src={photo} alt="tour-img" />
-        <span>Featured</span>
+        {featured && <span>Featured</span>}
       </div>
       <CardBody>
       <div className="card__top d-flex align-items-center justify-content-between">
@@ -18,8 +23,12 @@ const TourCard = ({tour}) => {
         <i class="ri-map-pin-line"></i> {city}
         </span>
         <span className="tour__rating d-flex align-items-center gap-2">
-        <i class="ri-star-smile-line"></i> {avgRating}{" "} 
-        <span>{reviews.length}</span>
+        <i class="ri-star-smile-line"></i> {avgRating === 0 ? null : avgRating}
+        {totalRating === 0 ? (
+          "Not rated" 
+          ): ( <span>{reviews.length}</span> )
+        }
+        
         </span>
 
       </div>
